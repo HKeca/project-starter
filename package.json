@@ -6,12 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/bundle.js",
-    "watch": "webpack --config=webpack/dev.js --progress -w"
+    "watch": "webpack --config=webpack/dev.js --progress -w",
+    "lint:js": "eslint --ext .ts src/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",
     "webpack": "^5.68.0",
