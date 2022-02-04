@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/bundle.js",
     "watch": "webpack --config=webpack/dev.js --progress -w",
+    "build": "webpack --config=webpack/dev.js --progress",
     "lint:js": "eslint --ext .ts src/"
   },
   "keywords": [],
