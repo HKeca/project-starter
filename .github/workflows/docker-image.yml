@@ -1,0 +1,32 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build-distribution:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run JavaScript Linting
+        run: npm run lint:js
+
+      - name: Build Assets
+        run: npm run build
+
+      - name: Put commit SHA into image for ID purposes
+        run: "echo ${GITHUB_SHA} > .sha"
