@@ -6,3 +6,5 @@ const number2: number = 20;
 console.log(
   add(number1, number2)
 );
+
+export { add };
