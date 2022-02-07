@@ -25,6 +25,9 @@ jobs:
       - name: Run JavaScript Linting
         run: npm run lint:js
 
+      - name: Run JavaScript tests
+        run: npm test
+
       - name: Build Assets
         run: npm run build
 
